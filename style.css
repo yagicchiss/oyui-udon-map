@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f7fbff;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.map-image {
+  width: 100%;
+  display: block;
+}
+
+#pinLayer {
+  position: absolute;
+  inset: 0;
+}
+
+.pin {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.pin-label {
+  position: absolute;
+  transform: translate(-50%, 4px);
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: bold;
+  color: #0077aa;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+.place-list {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.place-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.place-list li {
+  margin-bottom: 10px;
+}
+
+.place-list a {
+  text-decoration: none;
+  color: #0077aa;
+  font-weight: bold;
+}
+
+.place-list a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
