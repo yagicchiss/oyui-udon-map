@@ -1,25 +1,38 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
   background: #f7fbff;
   color: #333;
 }
 
-h1 {
+/* タイトル画像 */
+.site-header {
   text-align: center;
-  margin: 20px 0;
+  padding: 20px 0 10px;
 }
 
+.title-image {
+  width: 320px;
+  max-width: 80%;
+  height: auto;
+  display: inline-block;
+}
+
+/* 全体レイアウト */
 .container {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
   padding: 20px;
+  align-items: start;
 }
 
+/* 地図部分 */
 .map-wrapper {
   position: relative;
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .map-image {
@@ -27,34 +40,63 @@ h1 {
   display: block;
 }
 
+/* ピンを置くレイヤー */
 #pinLayer {
   position: absolute;
   inset: 0;
 }
 
-.pin {
+/* ピンと店名ラベルをまとめる箱 */
+.marker-wrap {
   position: absolute;
   transform: translate(-50%, -100%);
-  font-size: 24px;
   cursor: pointer;
+  z-index: 10;
 }
 
+/* ピン */
+.pin {
+  font-size: 24px;
+  line-height: 1;
+  user-select: none;
+}
+
+/* 店名ラベル：通常は非表示 */
 .pin-label {
+  display: none;
   position: absolute;
-  transform: translate(-50%, 4px);
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  margin-bottom: 6px;
+
   white-space: nowrap;
   font-size: 12px;
   font-weight: bold;
   color: #0077aa;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 4px 8px;
   border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* ピンにカーソルを重ねたときだけ店名表示 */
+.marker-wrap:hover .pin-label {
+  display: block;
+}
+
+/* 場所一覧 */
 .place-list {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.place-list h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #0077aa;
 }
 
 .place-list ul {
@@ -68,28 +110,35 @@ h1 {
 }
 
 .place-list a {
-  text-decoration: none;
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #eef9fc;
   color: #0077aa;
+  text-decoration: none;
   font-weight: bold;
 }
 
 .place-list a:hover {
-  text-decoration: underline;
+  background: #d7f2fa;
 }
 
+/* スマホ対応 */
 @media (max-width: 800px) {
   .container {
     grid-template-columns: 1fr;
+    padding: 12px;
   }
-}
-.site-header {
-  text-align: center;
-  padding: 20px 0 10px;
-}
 
-.title-image {
-  width: 320px;      /* 中くらい */
-  max-width: 80%;
-  height: auto;
-  display: inline-block;
+  .title-image {
+    width: 260px;
+  }
+
+  .pin {
+    font-size: 22px;
+  }
+
+  .pin-label {
+    font-size: 11px;
+  }
 }
