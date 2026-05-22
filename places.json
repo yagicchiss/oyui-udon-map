@@ -1,7 +1,15 @@
 [
   {
-    "name": "東京駅",
-    "lat": 35.681236,
-    "lng": 139.767125
+    "name": "銀座 佐藤養助",
+    "lat": 35.67145540697248, 
+    "lng": 139.76156438450937,
+    "url": "https://maps.app.goo.gl/4K9VvpbKVNogAuXXA"
   },
+{
+    "name": "五代目花山うどん 銀座店",
+    "lat": 35.67024028348747,  
+    "lng": 139.76920060985972,
+    "url": "https://maps.app.goo.gl/d5oQMRSb6a8NkfaF6"
+  }
+
   ]

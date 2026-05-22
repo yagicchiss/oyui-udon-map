@@ -82,3 +82,14 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+.site-header {
+  text-align: center;
+  padding: 20px 0 10px;
+}
+
+.title-image {
+  width: 320px;      /* 中くらい */
+  max-width: 80%;
+  height: auto;
+  display: inline-block;
+}
